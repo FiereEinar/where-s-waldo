@@ -3,8 +3,8 @@ import { gameLevels } from '../constants';
 
 export default function Homepage() {
 	return (
-		<main className='min-h-screen flex flex-col p-3'>
-			<section className='flex gap-5'>
+		<main className='min-h-screen flex flex-col p-5'>
+			<section className='flex gap-5 justify-center'>
 				{gameLevels.map((game, i) => (
 					<div
 						className='w-[20rem] p-3 border border-gray-300 rounded-md shadow-lg'

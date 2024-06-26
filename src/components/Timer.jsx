@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useMemo, useState } from 'react';
 import { formatTime } from '../utils/utils';
 
-export default function Timer({ targetStats }) {
+export default function Timer({ targetStats, timerFinishFn }) {
 	const [isRunning, setIsRunning] = useState(true);
 	const [elapsedTime, setElapsedTime] = useState(null);
 	const startTime = useMemo(() => new Date(), []);
@@ -19,11 +20,12 @@ export default function Timer({ targetStats }) {
 	useEffect(() => {
 		if (Object.values(targetStats).every((v) => v === true)) {
 			setIsRunning(false);
+			timerFinishFn(elapsedTime);
 		}
-	}, [targetStats]);
+	}, [targetStats, timerFinishFn, elapsedTime]);
 
 	return (
-		<div className='border shadow-md rounded-md flex justify-center items-center p-3'>
+		<div className='flex justify-center items-center p-3'>
 			<p>{formatTime(elapsedTime)}</p>
 		</div>
 	);

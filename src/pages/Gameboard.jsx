@@ -44,6 +44,8 @@ export default function Gameboard() {
 			y: Math.floor((position.y / img.clientHeight) * img.naturalHeight),
 		};
 
+		console.log('Cursor: ', cursor.x, cursor.y);
+
 		const isHit =
 			Math.abs(target.position.x - cursor.x) < 40 &&
 			Math.abs(target.position.y - cursor.y) < 40;

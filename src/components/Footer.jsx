@@ -4,7 +4,7 @@ export default function Footer() {
 			<div className='max-w-md mx-auto p-4'>
 				<div className='flex justify-center items-center gap-2'>
 					<p className='text-sm'>
-						&copy; 2024 <span className='text-orange-500'>Blogs</span>.Daily
+						&copy; 2024 <span className='text-blue-900'>Character</span>Hunt
 					</p>
 					<a href='https://github.com/FiereEinar' target='_blank'>
 						<img
@@ -14,7 +14,7 @@ export default function Footer() {
 						/>
 					</a>
 				</div>
-				<ul className='flex justify-center mb-0'>
+				<ul className='flex gap-5 justify-center mb-0'>
 					<li>
 						<button className='hover:underline'>Contact</button>
 					</li>

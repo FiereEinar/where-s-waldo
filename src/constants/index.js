@@ -11,6 +11,14 @@ export const gameLevels = [
           y: 679,
         }
       },
+      {
+        name: 'Odlaw',
+        img: '/game-1-target-2.jpg',
+        position: {
+          x: 262,
+          y: 641,
+        }
+      },
     ]
   },
   {
