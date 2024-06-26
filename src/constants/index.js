@@ -1,24 +1,46 @@
 export const gameLevels = [
   {
     name: 'Wheres Waldo',
-    img: 'https://i.ibb.co/Q9MP93M/wallpaperflare-com-wallpaper.jpg',
+    img: '/game-1.jpg',
     targets: [
       {
         name: 'Waldo',
-        img: 'https://i.ibb.co/cc8LptJ/4y-Rc-S2-Zo-400x400.png',
+        img: '/game-1-target-1.png',
         position: {
-          x: 50,
-          y: 50,
-        }
-      },
-      {
-        name: 'Waldo',
-        img: 'https://i.ibb.co/cc8LptJ/4y-Rc-S2-Zo-400x400.png',
-        position: {
-          x: 50,
-          y: 50,
+          x: 1792,
+          y: 679,
         }
       },
     ]
   },
+  {
+    name: 'Disney Characters',
+    img: '/game-2.jpg',
+    targets: [
+      {
+        name: 'Candice',
+        img: '/game-2-target-1.jpg',
+        position: {
+          x: 604,
+          y: 890,
+        }
+      },
+      {
+        name: 'Baby Donald Duck',
+        img: '/game-2-target-2.jpg',
+        position: {
+          x: 342,
+          y: 590,
+        }
+      },
+      {
+        name: 'Perry the Platypus',
+        img: '/game-2-target-3.jpg',
+        position: {
+          x: 586,
+          y: 566,
+        }
+      }
+    ]
+  }
 ]
