@@ -103,7 +103,11 @@ export default function Gameboard() {
 				</button>
 			</div>
 
-			<Gamestats gameTargets={gameLevel.targets} targetStates={targetStates} />
+			<Gamestats
+				gameTargets={gameLevel.targets}
+				targetStates={targetStates}
+				gameID={gameLevel.gameID}
+			/>
 		</main>
 	);
 }

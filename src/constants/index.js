@@ -19,7 +19,8 @@ export const gameLevels = [
           y: 641,
         }
       },
-    ]
+    ],
+    gameID: 1,
   },
   {
     name: 'Disney Characters',
@@ -49,6 +50,7 @@ export const gameLevels = [
           y: 566,
         }
       }
-    ]
+    ],
+    gameID: 2,
   }
 ]

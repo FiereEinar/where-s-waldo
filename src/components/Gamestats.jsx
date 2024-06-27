@@ -1,20 +1,28 @@
 /* eslint-disable react/prop-types */
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Dialog from './Dialog';
 import Timer from './Timer';
 import RecordTimeForm from './RecordTimeForm';
 import { formatTime } from '../utils/utils';
 import { useNavigate } from 'react-router-dom';
 
-export default function Gamestats({ targetStates, gameTargets }) {
+export default function Gamestats({ targetStates, gameTargets, gameID }) {
 	const navigate = useNavigate();
 	const [endGameDialog, setEndGameDialog] = useState(false);
 	const [time, setTime] = useState('');
 
+	useEffect(() => {
+		if (endGameDialog) {
+			document.body.classList.add('overflow-hidden');
+		} else {
+			document.body.classList.remove('overflow-hidden');
+		}
+	}, [endGameDialog]);
+
 	return (
 		<section className='flex flex-wrap justify-center gap-16 m-3 shadow-md border rounded-md'>
 			<Dialog isOpen={endGameDialog}>
-				<div className='relative p-5 backdrop-blur-sm bg-white/30 shadow-xl rounded-md flex flex-col justify-center items-center'>
+				<div className='relative p-10 backdrop-blur-sm bg-white/30 shadow-xl rounded-md flex flex-col justify-center items-center'>
 					<button
 						onClick={() => navigate('/')}
 						className='absolute top-2 right-2'
@@ -26,7 +34,7 @@ export default function Gamestats({ targetStates, gameTargets }) {
 					<p className='text-sm mt-3'>
 						Enter your username to record your time.
 					</p>
-					<RecordTimeForm time={time} />
+					<RecordTimeForm time={time} gameID={gameID} />
 				</div>
 			</Dialog>
 			<Timer
