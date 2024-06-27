@@ -24,7 +24,10 @@ export default function Gamestats({ targetStates, gameTargets, gameID }) {
 			<DialogWrapper isOpen={endGameDialog}>
 				<div className='relative p-10 backdrop-blur-sm bg-white/30 shadow-xl rounded-md flex flex-col justify-center items-center'>
 					<button
-						onClick={() => navigate('/')}
+						onClick={() => {
+							navigate('/');
+							document.body.classList.remove('overflow-hidden');
+						}}
 						className='absolute top-2 right-2'
 					>
 						<img src='/close.svg' alt='close' />

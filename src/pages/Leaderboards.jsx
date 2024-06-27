@@ -19,7 +19,11 @@ export default function Leaderboards() {
 	}
 
 	if (isLoading) {
-		return <p>Loading...</p>;
+		return (
+			<main className='min-h-screen flex flex-col items-center'>
+				<p className='text-3xl font-bold p-10'>Loading...</p>
+			</main>
+		);
 	}
 
 	return (

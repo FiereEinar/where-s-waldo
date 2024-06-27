@@ -24,6 +24,14 @@ export default function LeaderboardsTable({ gameTitle, scores }) {
 				</TableRow>
 			</TableHeader>
 			<TableBody>
+				{scores.length === 0 && (
+					<TableRow>
+						<TableCell></TableCell>
+						<TableCell className='text-center text-muted-foreground'>
+							No scores yet. Be the first!
+						</TableCell>
+					</TableRow>
+				)}
 				{scores.map((score) => (
 					<TableRow key={score._id}>
 						<TableCell className='font-medium'>

@@ -52,5 +52,52 @@ export const gameLevels = [
       }
     ],
     gameID: 2,
+  },
+  {
+    name: 'Messy Room',
+    img: '/game-3.jpg',
+    targets: [
+      {
+        name: 'Painters Pallete',
+        img: '/game-3-target-1.jpg',
+        position: {
+          x: 106,
+          y: 314,
+        }
+      },
+      {
+        name: 'Magnet',
+        img: '/game-3-target-2.jpg',
+        position: {
+          x: 560,
+          y: 281,
+        }
+      },
+      {
+        name: 'Diamond',
+        img: '/game-3-target-3.png',
+        position: {
+          x: 315,
+          y: 99,
+        }
+      },
+      {
+        name: 'Dragonfly',
+        img: '/game-3-target-4.jpg',
+        position: {
+          x: 556,
+          y: 323,
+        }
+      },
+      {
+        name: 'Compass',
+        img: '/game-3-target-5.jpg',
+        position: {
+          x: 122,
+          y: 144,
+        }
+      },
+    ],
+    gameID: 3,
   }
 ]

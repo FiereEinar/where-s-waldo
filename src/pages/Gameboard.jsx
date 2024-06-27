@@ -56,7 +56,7 @@ export default function Gameboard() {
 	};
 
 	return (
-		<main className='min-h-screen flex flex-col-reverse justify-center items-center'>
+		<main className='min-h-screen flex flex-col-reverse justify-end items-center'>
 			<div className='relative' ref={containerRef}>
 				{position && (
 					// the marker when the image is clicked
@@ -98,6 +98,7 @@ export default function Gameboard() {
 					<img
 						ref={imageRef}
 						src={gameLevel.img}
+						// className='w-[80vw]'
 						alt='wallpaperflare-com-wallpaper'
 					/>
 				</button>
