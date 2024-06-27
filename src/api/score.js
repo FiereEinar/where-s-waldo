@@ -12,3 +12,23 @@ export const postScore = async (formData) => {
     console.error('Error posting score', err);
   }
 }
+
+export const getScoresById = async (gameID) => {
+  try {
+    const { data } = await axios.get(`${BASE_URL}/score/${gameID}`);
+
+    return data;
+  } catch (err) {
+    console.error('Error posting score', err);
+  }
+};
+
+export const getScores = async () => {
+  try {
+    const { data } = await axios.get(`${BASE_URL}/scores`);
+
+    return data.data;
+  } catch (err) {
+    console.error('Error posting score', err);
+  }
+};

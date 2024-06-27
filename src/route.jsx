@@ -3,6 +3,7 @@ import App from './App';
 import NotFoundPage from './pages/NotFoundPage';
 import Homepage from './pages/Homepage';
 import Gameboard from './pages/Gameboard';
+import Leaderboards from './pages/Leaderboards';
 
 export default function Route() {
 	const route = createBrowserRouter([
@@ -18,6 +19,10 @@ export default function Route() {
 				{
 					path: '/game',
 					element: <Gameboard />,
+				},
+				{
+					path: '/leaderboards',
+					element: <Leaderboards />,
 				},
 			],
 		},

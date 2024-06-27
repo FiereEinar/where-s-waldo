@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from 'react';
-import Dialog from './Dialog';
 import Timer from './Timer';
 import RecordTimeForm from './RecordTimeForm';
 import { formatTime } from '../utils/utils';
 import { useNavigate } from 'react-router-dom';
+import DialogWrapper from './DialogWrapper';
 
 export default function Gamestats({ targetStates, gameTargets, gameID }) {
 	const navigate = useNavigate();
@@ -21,7 +21,7 @@ export default function Gamestats({ targetStates, gameTargets, gameID }) {
 
 	return (
 		<section className='flex flex-wrap justify-center gap-16 m-3 shadow-md border rounded-md'>
-			<Dialog isOpen={endGameDialog}>
+			<DialogWrapper isOpen={endGameDialog}>
 				<div className='relative p-10 backdrop-blur-sm bg-white/30 shadow-xl rounded-md flex flex-col justify-center items-center'>
 					<button
 						onClick={() => navigate('/')}
@@ -36,7 +36,7 @@ export default function Gamestats({ targetStates, gameTargets, gameID }) {
 					</p>
 					<RecordTimeForm time={time} gameID={gameID} />
 				</div>
-			</Dialog>
+			</DialogWrapper>
 			<Timer
 				targetStats={targetStates}
 				timerFinishFn={(time) => {

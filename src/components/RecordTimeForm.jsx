@@ -2,8 +2,11 @@
 import { useEffect, useState } from 'react';
 import { postScore } from '../api/score';
 import { useNavigate } from 'react-router-dom';
+import { Button } from './ui/button';
+import { useToast } from './ui/use-toast';
 
 export default function RecordTimeForm({ time, gameID }) {
+	const { toast } = useToast();
 	const navigate = useNavigate();
 	const [username, setUsername] = useState('');
 	const [loading, setLoading] = useState(false);
@@ -15,20 +18,23 @@ export default function RecordTimeForm({ time, gameID }) {
 
 			const data = {
 				time: time,
-				username: username,
+				username: username.toLowerCase(),
 				gameID: gameID,
 			};
 
 			const result = await postScore(data);
 
 			if (!result.success) {
-				console.log('Error posting comment', result);
+				toast({ variant: 'destructive', title: 'Error posting score' });
+				console.log('Error posting score', result);
 				return;
 			}
 
-			console.log('Comment posted successfully');
+			console.log('Score posted successfully');
+			toast({ title: 'Score posted successfully' });
 			navigate('/');
 		} catch (err) {
+			toast({ variant: 'destructive', title: 'Error posting score' });
 			console.error('Error posting score', err);
 		} finally {
 			setLoading(false);
@@ -52,13 +58,9 @@ export default function RecordTimeForm({ time, gameID }) {
 				/>
 			</div>
 			<div className='mt-3 flex justify-center'>
-				<button
-					disabled={loading}
-					className='border disabled:opacity-90 py-1 px-5 rounded-md bg-blue-950 text-white hover:opacity-90'
-					type='submit'
-				>
+				<Button disabled={loading} className='' type='submit'>
 					Submit
-				</button>
+				</Button>
 			</div>
 		</form>
 	);

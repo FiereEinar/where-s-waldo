@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
-
-export default function Dialog({ children, isOpen }) {
+export default function DialogWrapper({ children, isOpen }) {
 	return (
 		<>
 			{isOpen && (
